@@ -1,0 +1,26 @@
+.content {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    left: 0;
+    top: 80px;
+    transition: 400ms;
+}
+
+.content.active{
+    width: calc(100vw - 275px);
+    position: fixed;
+    left: 275px;
+    transition: 420ms;
+}
+
+.section-title {
+    width: 100%;
+    font-size: 3rem;
+    padding: 16px 32px;
+    color: #0026ab;
+    background-color: white;
+    -webkit-box-shadow: 0px 15px 38px 4px rgba(219,219,219,1);
+    -moz-box-shadow: 0px 15px 38px 4px rgba(219,219,219,1);
+    box-shadow: 0px 15px 38px 4px rgba(219,219,219,1);
+}
