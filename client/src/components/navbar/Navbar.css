@@ -27,9 +27,6 @@
     top: 0;
     left: -100%;
     transition: 850ms;
-    -webkit-box-shadow: 10px 0px 18px -6px rgba(227,227,227,1);
-    -moz-box-shadow: 10px 0px 18px -6px rgba(227,227,227,1);
-    box-shadow: 10px 0px 18px -6px rgba(227,227,227,1);
 }
 
 .nav-menu.active {
@@ -48,7 +45,7 @@
 }
 
 .logo {
-    color: #0026ab;
+    color: white;
     font-size: 1rem;
     font-weight: bold;
     padding-right: 8px;
@@ -105,4 +102,10 @@ span {
     width: 150px;
     align-items: center;
     gap: 20px;
+}
+
+.flex-box {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
 }

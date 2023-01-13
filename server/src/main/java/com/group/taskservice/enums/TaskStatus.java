@@ -7,7 +7,6 @@ public enum TaskStatus {
 
     CREATED,
     ASSIGNED,
-    SCHEDULED,
     IN_PROGRESS,
     DONE;
 }

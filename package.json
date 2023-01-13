@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@mui/icons-material": "^5.11.0",
+    "status-indicator": "^1.0.9"
+  }
+}

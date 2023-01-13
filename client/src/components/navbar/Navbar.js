@@ -33,7 +33,11 @@ function Navbar({ changeNavbarVisibility }) {
         <Link to="#" className="menu-bars" style={{ color: "white" }}>
           <BiIcons.BiMenuAltLeft onClick={showSidebar} />
         </Link>
-        <div>
+        <div className="flex-box">
+          <div className="logo">
+            <FaIcons.FaReact />
+            <span style={{ marginLeft: "4px" }}>Super Company SA</span>
+          </div>
           <Button
             id="basic-button"
             aria-controls={open ? "basic-menu" : undefined}
@@ -75,10 +79,6 @@ function Navbar({ changeNavbarVisibility }) {
             <Link to="#" className="menu-bars">
               <AiIcons.AiOutlineClose />
             </Link>
-            <div className="logo">
-              <FaIcons.FaReact />
-              <span style={{ marginLeft: "4px" }}>Super Company SA</span>
-            </div>
           </li>
           {SidebarData.map((item, index) => {
             return (

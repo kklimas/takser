@@ -28,7 +28,7 @@ import * as FiIcons from "react-icons/fi";
 import {
   deleteTasks,
   assignTasks as assign,
-} from "../../services/task-service";
+} from "../../../services/task-service";
 import { LocalizationProvider, MobileDatePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { Link } from "react-router-dom";
