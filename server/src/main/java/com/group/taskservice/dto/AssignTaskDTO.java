@@ -7,5 +7,5 @@ import java.sql.Timestamp;
 @Getter
 public class AssignTaskDTO {
     Long taskId;
-    String deadLine;
+    Timestamp deadLine;
 }
