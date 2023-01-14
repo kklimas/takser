@@ -12,10 +12,7 @@
   font-family: 'Lato', sans-serif;
 }
 
-.home,
-.employees,
-.tasks,
-.task-details {
+.paper {
   display: flex;
   flex-direction: column;
   height: auto;
@@ -23,8 +20,4 @@
   font-size: 3rem;
   margin: 40px;
   padding: 16px 32px;
-  background-color: white;
-  -webkit-box-shadow: 0px 0px 71px 3px rgba(201,201,201,1);
-  -moz-box-shadow: 0px 0px 71px 3px rgba(201,201,201,1);
-  box-shadow: 0px 0px 71px 3px rgba(201,201,201,1);
 }

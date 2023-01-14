@@ -1,10 +1,11 @@
 import React from "react";
 import "../App.css";
+import { Paper } from "@mui/material";
 
 export const Employees = () => {
   return (
-    <div className="employees">
+    <Paper elevation={12} className="paper">
       <h1>Employees</h1>
-    </div>
+    </Paper>
   );
 };

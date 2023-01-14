@@ -13,11 +13,11 @@ import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { styled } from "@mui/material/styles";
 import { TabContext, TabPanel } from "@mui/lab";
-import { TaskList } from "../modules/task/task-list/TaskList";
+import { TaskList } from "../components/task/task-list/TaskList";
 import { useForm } from "react-hook-form";
 import { createTask as addTask, fetchTasks } from "../services/task-service";
 import { fetchEmployees } from "../services/employee-service";
-
+import { Paper } from "@mui/material";
 import { CustomAlert } from "../components/alerts/CustomAlert";
 const StyledTabs = styled((props) => (
   <Tabs
@@ -133,9 +133,8 @@ export const Tasks = () => {
   };
 
   let manageData = [findTasks, setDisplayOkAlert, setDisplayFailAlert];
-  const abc = () => console.log(123);
   return (
-    <div className="tasks">
+    <Paper elevation={12} className="paper">
       <Box sx={{ width: "100%" }}>
         <TabContext value={value}>
           <Box>
@@ -211,7 +210,10 @@ export const Tasks = () => {
                 fullWidth
                 variant="outlined"
                 {...register("name", {
-                  required: { value: true, message: "This field is required." },
+                  required: {
+                    value: true,
+                    message: "This field is required.",
+                  },
                   minLength: {
                     value: 5,
                     message: "Name should has at least 5 characters",
@@ -239,7 +241,10 @@ export const Tasks = () => {
                 multiline
                 rows={2}
                 {...register("description", {
-                  required: { value: true, message: "This field is required." },
+                  required: {
+                    value: true,
+                    message: "This field is required.",
+                  },
                 })}
               />
             </DialogContent>
@@ -262,6 +267,6 @@ export const Tasks = () => {
         setDisplay={setDisplayFailAlert}
         type="error"
       />
-    </div>
+    </Paper>
   );
 };

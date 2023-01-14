@@ -1,18 +1,23 @@
 import React from "react";
 import "../App.css";
-import { TaskSummary } from "../modules/task/task-summary/TaskSummary";
-import TaskTreeView from "../modules/task/task-tree-view/TaskTreeView";
+import { TaskSummary } from "../components/task/task-summary/TaskSummary";
+import TaskTreeView from "../components/task/task-tree-view/TaskTreeView";
+import { Paper } from "@mui/material";
+import { TaskResolution } from "../components/task/task-resolution/TaskResolution";
 
 export const TaskDetails = () => {
   return (
     <>
-      <div className="task-details">
+      <Paper elevation={12} className="paper">
         Summary
         <TaskSummary />
-      </div>
-      <div className="task-details">
+      </Paper>
+      <Paper elevation={12} className="paper">
         <TaskTreeView></TaskTreeView>
-      </div>
+      </Paper>
+      <Paper elevation={12} className="paper">
+        <TaskResolution></TaskResolution>
+      </Paper>
     </>
   );
 };

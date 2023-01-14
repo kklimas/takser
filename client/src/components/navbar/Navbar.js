@@ -1,15 +1,58 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as BiIcons from "react-icons/bi";
 import * as CgIcons from "react-icons/cg";
 import { SidebarData } from "../SidebarData";
 import "./Navbar.css";
-
+import SearchIcon from "@mui/icons-material/Search";
+import InputBase from "@mui/material/InputBase";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { styled } from "@mui/material/styles";
+import { Box } from "@mui/system";
+import { Typography } from "@mui/material";
+
+const Search = styled("div")(({ theme }) => ({
+  position: "relative",
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: "white",
+  "&:hover": {
+    backgroundColor: "rgb(230,230,230)",
+  },
+  marginRight: theme.spacing(2),
+  marginLeft: 0,
+  width: "100%",
+  [theme.breakpoints.up("sm")]: {
+    marginLeft: theme.spacing(3),
+    width: "auto",
+  },
+}));
+
+const SearchIconWrapper = styled("div")(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: "100%",
+  position: "absolute",
+  pointerEvents: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: "inherit",
+  "& .MuiInputBase-input": {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: "20ch",
+    },
+  },
+}));
 
 function Navbar({ changeNavbarVisibility }) {
   const [sidebar, setSidebar] = useState(false);
@@ -30,14 +73,25 @@ function Navbar({ changeNavbarVisibility }) {
   return (
     <>
       <div className="navbar">
-        <Link to="#" className="menu-bars" style={{ color: "white" }}>
-          <BiIcons.BiMenuAltLeft onClick={showSidebar} />
-        </Link>
+        <Box display="flex" gap={2}>
+          <Link to="#" className="menu-bars" style={{ color: "white" }}>
+            <BiIcons.BiMenuAltLeft onClick={showSidebar} />
+          </Link>
+          <Typography color="white" variant="h4">
+            Tasker
+          </Typography>
+        </Box>
+
         <div className="flex-box">
-          <div className="logo">
-            <FaIcons.FaReact />
-            <span style={{ marginLeft: "4px" }}>Super Company SA</span>
-          </div>
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search…"
+              inputProps={{ "aria-label": "search" }}
+            />
+          </Search>
           <Button
             id="basic-button"
             aria-controls={open ? "basic-menu" : undefined}
